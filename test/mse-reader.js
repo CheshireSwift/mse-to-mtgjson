@@ -12,7 +12,7 @@ describe('the MSE format reader', () => {
     expect(mse.parse(`
 a: 1
 b: 2
-    `)).to.eql({a: '1', b: '2'})
+    `)).to.eql({a: 1, b: 2})
   })
 
   it('parses subobjects', () => {
@@ -44,6 +44,19 @@ containerB:
     `)).to.eql({
       containerA: { contentsA: 'valueA' },
       containerB: { contentsB: 'valueB' }
+    })
+  })
+
+  it('handles "rules text" multiline text', () => {
+    expect(mse.parse(`
+card:
+  rules text:
+    Whenever you find an inconsistent part of the format, add one tears counter.
+    Sacrifice my sanity: make this dumb nonsense work
+    `)).to.eql({
+      card: {
+        "rules text": "Whenever you find an inconsistent part of the format, add one tears counter.\nSacrifice my sanity: make this dumb nonsense work"
+      }
     })
   })
 })
