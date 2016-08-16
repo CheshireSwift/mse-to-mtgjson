@@ -2,7 +2,7 @@ var chai = require('chai')
 var expect = chai.expect
 
 
-describe('the MSE format reader', () => {
+xdescribe('the MSE format reader', () => {
   var mse = require('../mse')
   it('parses "key: value"', () => {
     expect(mse.parse('a: b')).to.eql({ a: 'b' })
@@ -50,12 +50,12 @@ containerB:
   it('handles "rules text" multiline text', () => {
     expect(mse.parse(`
 card:
-  rules text:
+  rule text:
     Whenever you find an inconsistent part of the format, add one tears counter.
     Sacrifice my sanity: make this dumb nonsense work
     `)).to.eql({
       card: {
-        "rules text": "Whenever you find an inconsistent part of the format, add one tears counter.\nSacrifice my sanity: make this dumb nonsense work"
+        "rule text": "Whenever you find an inconsistent part of the format, add one tears counter.\nSacrifice my sanity: make this dumb nonsense work"
       }
     })
   })
