@@ -54,6 +54,64 @@ module.exports = {
         "Unit"
       ]
     }
+  },
+  gold: {
+    mse: {
+        "super type 2": "<word-list-type></word-list-type>",
+        "toughness": 2,
+        "power": 2,
+        "has styling": false,
+        "image": "image9",
+        "image 2": null,
+        "illustrator": "Aradnom",
+        "rule text 2": null,
+        "flavor text 2": "<i-flavor></i-flavor>",
+        "time modified": "2016-02-17 00:40:19",
+        "sub type": "Aristocrat",
+        "rule text": "At the beginning of your upkeep, each opponent loses 1 command and you gain 1 command.\n<sym-auto>T</sym-auto>, Pay 1 command: Draw a card.\n",
+        "card code text": null,
+        "name": "Representative Vuissance",
+        "copyright": null,
+        "super type": "<word-list-type>Distinguished Unit</word-list-type>",
+        "notes": null,
+        "rarity": "rare",
+        "flavor text": "<i-flavor></i-flavor>",
+        "time created": "2012-10-21 22:57:39",
+        "casting cost": "2WB",
+        "type symbol": "creature",
+        "sub type 2": null,
+        "copyright 2": null
+    },
+    mtg: {
+      "artist": "Aradnom",
+      "cmc": 4,
+      "colorIdentity": [
+        "W",
+        "B"
+      ],
+      "colors": [
+        "White",
+        "Black"
+      ],
+      "imageName": "image9",
+      "layout": "normal",
+      "manaCost": "{2}{W}{B}",
+      "name": "Representative Vuissance",
+      "power": "2",
+      "rarity": "Rare",
+      "subtypes": [
+        "Aristocrat"
+      ],
+      "supertypes": [
+        "Distinguished"
+      ],
+      "text": "At the beginning of your upkeep, each opponent loses 1 command and you gain 1 command.\nT, Pay 1 command: Draw a card.",
+      "toughness": "2",
+      "type": "Distinguished Unit \u2014 Aristocrat",
+      "types": [
+        "Unit"
+      ]
+    }
   }
 }
 

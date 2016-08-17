@@ -8,9 +8,10 @@ function stripTags(xml) {
 
 function card(mseCard) {
   var colorIdentity = _.filter(mseCard['casting cost'], c => c.match(/[WUBRG]/))
-  return {
+  var types = stripTags(mseCard['super type']).split(' ')
+  return _.pickBy({
     artist: mseCard['illustrator'],
-    cmc: mseCard['casting cost'].length,
+    cmc: colorIdentity.length + _.toNumber(mseCard['casting cost'].match(/^\d*/)),
     colorIdentity,
     colors: _.map(colorIdentity, c => ({ W: 'White', U: 'Blue', B: 'Black', R: 'Red', G: 'Green' }[c])),
     imageName: mseCard['image'],
@@ -20,11 +21,12 @@ function card(mseCard) {
     power: '' + mseCard['power'],
     rarity: _.capitalize(mseCard['rarity']),
     subtypes: mseCard['sub type'].split(' '),
+    supertypes: _.initial(types),
     text: stripTags(mseCard['rule text']).trim(),
     toughness: '' + mseCard['toughness'],
     type: stripTags(mseCard['super type']) + ' \u2014 ' + mseCard['sub type'],
-    types: [stripTags(mseCard['super type'])]
-  }
+    types: [_.last(types)]
+  }, field => _.isNumber(field) || !_.isEmpty(field))
 }
 
 module.exports = { card }
