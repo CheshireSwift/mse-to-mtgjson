@@ -112,6 +112,47 @@ module.exports = {
         "Unit"
       ]
     }
+  },
+  sorcery: {
+    mse: {
+      "time modified": "2016-04-06 21:59:50",
+      "has styling": false,
+      "sub type": null,
+      "image 2": null,
+      "illustrator": "Leon Tukker",
+      "type symbol": "sorcery",
+      "rule text": "<atom-cardname><nospellcheck>Supervolcanic Fallout</nospellcheck></atom-cardname> deals 3 damage to each player.\nUp to three target units can\u2019t intercept this turn.\n",
+      "card code text": null,
+      "name": "Supervolcanic Fallout",
+      "copyright": null,
+      "super type": "<word-list-type>Edict</word-list-type>",
+      "notes": null,
+      "flavor text": "<i-flavor></i-flavor>",
+      "time created": "2014-05-18 17:14:08",
+      "casting cost": "3RR",
+      "image": "image211",
+      "copyright 2": null
+    },
+    mtg: {
+      "artist": "Leon Tukker",
+      "cmc": 5,
+      "colorIdentity": [
+        "R"
+      ],
+      "colors": [
+        "Red"
+      ],
+      "imageName": "image211",
+      "layout": "normal",
+      "manaCost": "{3}{R}{R}",
+      "name": "Supervolcanic Fallout",
+      "rarity": "Common",
+      "text": "Supervolcanic Fallout deals 3 damage to each player.\nUp to three target units can\u2019t intercept this turn.",
+      "type": "Edict",
+      "types": [
+        "Edict"
+      ]
+    }
   }
 }
 

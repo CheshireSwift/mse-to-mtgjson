@@ -1,8 +1,10 @@
 #!/usr/bin/node
 
 var program = require('commander')
+var _ = require('lodash')
 
 var mse = require('./mse')
+var converter = require('./converter')
 
 program
   .version('1.0.0')
@@ -13,12 +15,12 @@ program
 
 
 var method =
-  program.tidy ? 'tidy' :
-  program.json ? 'displayParsed' :
-  'convert'
+  program.tidy ? mse.tidy :
+  program.json ? mse.displayParsed :
+  input => JSON.stringify(_.map(mse.parse(input).cards, converter.card))
 
 if (program.line) {
-  process.stdout.write(mse[method](program.line))
+  process.stdout.write(method(program.line))
   return
 }
 
@@ -26,5 +28,5 @@ var pipedInput = ''
 process.stdin.resume()
 process.stdin.setEncoding('utf8')
 process.stdin.on('data', data => pipedInput += data)
-process.stdin.on('end', () => process.stdout.write(mse[method](pipedInput)))
+process.stdin.on('end', () => process.stdout.write(method(pipedInput)))
 
