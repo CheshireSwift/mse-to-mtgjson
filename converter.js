@@ -3,15 +3,33 @@
 var _ = require('lodash')
 
 const TYPES = [
+  'Artifact',
+  'Conspiracy',
+  'Creature',
+  'Enchantment',
+  'Instant',
+  'Land',
+  'Phenomenon',
+  'Plane',
+  'Planeswalker',
+  'Scheme',
+  'Sorcery',
+  'Tribal',
+  'Vanguard',
   'Development',
   'Device',
   'Edict',
-  'Land',
   'Organization',
   'Unit'
 ]
 
 const SUPERTYPES = [
+  'Basic',
+  'Elite',
+  'Legendary',
+  'Ongoing',
+  'Snow',
+  'World',
   'Distinguished',
   'Tactical'
 ]
