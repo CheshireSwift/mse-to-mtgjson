@@ -11,13 +11,15 @@ program
   .option('-l, --line [line]', 'Specify a line to read rather than piping in')
   .option('-t, --tidy', 'Just tidy input into YAML (no parsing)')
   .option('-j, --json', 'Just parse input into JSON (no conversion)')
+  .option('-p, --pretty', 'Pretty print JSON output')
   .parse(process.argv)
 
+var JSONout = input => JSON.stringify(input, null, program.pretty && 2)
 
 var method =
   program.tidy ? mse.tidy :
-  program.json ? mse.displayParsed :
-  input => JSON.stringify(_.map(mse.parse(input).cards, converter.card))
+  program.json ? _.flow(mse.parse, JSONout) :
+  input => JSONout(_.map(mse.parse(input).cards, converter.card))
 
 if (program.line) {
   process.stdout.write(method(program.line))

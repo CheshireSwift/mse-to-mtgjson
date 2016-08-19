@@ -30,14 +30,5 @@ function tidy(mseString) {
 function parse(mseString) {
   return yaml.load(tidy(mseString))
 }
-
-function displayParsed(mseString) {
-  return JSON.stringify(parse(mseString), null, 2)
-}
-
-function convert(mseString) {
-  return JSON.stringify(parse(mseString).card, null, 2)
-}
-
-module.exports = { tidy, parse, displayParsed, convert }
+module.exports = { tidy, parse }
 
