@@ -2,6 +2,20 @@
 
 var _ = require('lodash')
 
+const TYPES = [
+  'Development',
+  'Device',
+  'Edict',
+  'Land',
+  'Organization',
+  'Unit'
+]
+
+const SUPERTYPES = [
+  'Distinguished',
+  'Tactical'
+]
+
 function stripTags(xml) {
   return xml.replace(/<\/?[\w-]+?>/g, '')
 }
@@ -19,13 +33,13 @@ function card(mseCard) {
     manaCost: '{' + ('' + mseCard['casting cost']).split('').join('}{') + '}',
     name: mseCard['name'],
     power: mseCard['power'] != undefined && '' + mseCard['power'],
-    rarity: _.capitalize(mseCard['rarity']) || 'Common',
+    rarity: _.startCase(mseCard['rarity']) || 'Common',
     subtypes: mseCard['sub type'] && mseCard['sub type'].split(' '),
-    supertypes: _.initial(types),
+    supertypes: _.intersection(types, SUPERTYPES),
     text: stripTags(mseCard['rule text']).trim(),
     toughness: mseCard['toughness'] && '' + mseCard['toughness'],
     type: type(),
-    types: [_.last(types)]
+    types: _.intersection(types, TYPES),
   }, field => _.isNumber(field) || !_.isEmpty(field))
 
   function type() {

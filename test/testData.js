@@ -153,6 +153,63 @@ module.exports = {
         "Edict"
       ]
     }
+  },
+  multitype: {
+    mse: {
+      "super type 2": "<word-list-type></word-list-type>",
+      "toughness": 8,
+      "power": 8,
+      "has styling": false,
+      "image": "image78",
+      "image 2": null,
+      "rule text 2": null,
+      "flavor text 2": "<i-flavor></i-flavor>",
+      "time modified": "2016-02-16 23:16:57",
+      "sub type": "Battleship",
+      "rule text": "<kw-A><nospellcheck>Orbital</nospellcheck><atom-reminder-custom> <i-auto>(This unit can\u2019t be intercepted by and prevent all combat damage that would be dealt to this unit by units without flight, orbital, or rocketry.)</i-auto></atom-reminder-custom></kw-A>\n<kw-a><nospellcheck>Overwhelm</nospellcheck></kw-a>\nWhenever <atom-cardname><nospellcheck>The Hemera</nospellcheck></atom-cardname> enters the warzone or attacks, put a +1/+1 counter on each other unit you control.\n",
+      "card color": "white, artifact, horizontal",
+      "illustrator": "Adam Burn",
+      "name": "The Hemera",
+      "copyright": null,
+      "super type": "<word-list-type>Distinguished Device Unit</word-list-type>",
+      "notes": null,
+      "rarity": "mythic rare",
+      "flavor text": "<i-flavor></i-flavor>",
+      "time created": "2012-10-29 22:08:33",
+      "casting cost": "6WW",
+      "type symbol": "multitype",
+      "sub type 2": null,
+      "copyright 2": null
+    },
+    mtg: {
+      "artist": "Adam Burn",
+      "cmc": 8,
+      "colorIdentity": [
+        "W"
+      ],
+      "colors": [
+        "White"
+      ],
+      "imageName": "image78",
+      "layout": "normal",
+      "manaCost": "{6}{W}{W}",
+      "name": "The Hemera",
+      "power": "8",
+      "rarity": "Mythic Rare",
+      "supertypes": [
+        "Distinguished"
+      ],
+      "subtypes": [
+        "Battleship"
+      ],
+      "text": "Orbital (This unit can\u2019t be intercepted by and prevent all combat damage that would be dealt to this unit by units without flight, orbital, or rocketry.)\nOverwhelm\nWhenever The Hemera enters the warzone or attacks, put a +1/+1 counter on each other unit you control.",
+      "toughness": "8",
+      "type": "Distinguished Device Unit \u2014 Battleship",
+      "types": [
+        "Device",
+        "Unit"
+      ]
+    }
   }
 }
 

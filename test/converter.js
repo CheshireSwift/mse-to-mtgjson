@@ -23,6 +23,11 @@ describe('the MSE to MtG converter', () => {
       expect(convertedCard).to.eql(testData.sorcery.mtg)
     })
 
+    it('should handle multiple types', () => {
+      var convertedCard = converter.card(testData.multitype.mse)
+      expect(convertedCard).to.eql(testData.multitype.mtg)
+    })
+
     //it('should translate a colourless card (with watermark) correctly', () => {
     //})
 
